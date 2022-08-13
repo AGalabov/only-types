@@ -1,16 +1,10 @@
 export type Tuple = any[];
 export type Zero = [];
 
-export type RestFromArray<T extends Tuple> = T extends [any, ...infer Rest]
-  ? Rest
-  : Zero;
-// type Rest = RestFromArray<[string, number, { test: boolean }]>;
-// type Rest2 = RestFromArray<[1, 2, 3]>;
-
 export type Length<T extends Tuple> = T extends { length: infer L }
   ? L extends number
-    ? L
-    : Length<Zero>
+  ? L
+  : Length<Zero>
   : Length<Zero>;
 
 export type BuildTuple<N extends number, T extends Tuple = Zero> = T extends {
@@ -42,7 +36,7 @@ export type Minus<
   A extends number,
   B extends number,
   T = BuildTuple<A>
-> = T extends Zero
+  > = T extends Zero
   ? Length<Zero>
   : T extends [...infer Rest, ...BuildTuple<B>]
   ? Length<Rest>
@@ -53,10 +47,10 @@ export type Multiply<
   A extends number,
   B extends number,
   Accumulated extends number = Length<Zero>
-> = B extends Length<Zero>
+  > = B extends Length<Zero>
   ? Accumulated
   : Multiply<A, MinusOne<B>, Plus<Accumulated, A>>;
-  
+
 // type ZeroMultiplied = Multiply<0, 5>;
 // type MultipliedByZero = Multiply<5, 0>;
 // type Twenty = Multiply<5, 4>;
@@ -65,10 +59,10 @@ export type Multiply<
 export type GreaterThan<
   A extends number,
   B extends number
-> = BuildTuple<B> extends Zero
+  > = BuildTuple<B> extends Zero
   ? BuildTuple<A> extends Zero
-    ? false
-    : true
+  ? false
+  : true
   : GreaterThan<MinusOne<A>, MinusOne<B>>;
 
 // type Greater = GreaterThan<5, 3>; // Greater is of export type true
