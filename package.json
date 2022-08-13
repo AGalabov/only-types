@@ -1,0 +1,26 @@
+{
+  "name": "only-types",
+  "version": "1.0.0",
+  "description": "Solving the puzzles using variables, loops and functions is cool and all. But have you tried using types only? I did!",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AGalabov/only-types.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AGalabov/only-types/issues"
+  },
+  "homepage": "https://github.com/AGalabov/only-types#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
