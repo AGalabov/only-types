@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AGalabov/only-types#readme",
   "devDependencies": {
+    "objection": "^3.1.4",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   }
